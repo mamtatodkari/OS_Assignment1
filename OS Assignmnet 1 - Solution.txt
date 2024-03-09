@@ -1,0 +1,125 @@
+CDAC MUMBAI
+Concepts of Operating System
+Mamta Todkari
+
+Assignment 1
+
+Problem 1: Read the instructions carefully and answer accordingly. If there is
+any need to insert some data then do that as well. 
+
+a) Navigate and List:
+a. Start by navigating to your home directory and list its contents. Then, move into a
+directory named "LinuxAssignment" if it exists; otherwise, create it. 
+Solution : ls --> to navigate through home dirctory
+           mkdir LinuxAssignmnent --> to create  new LinuxAssignmnent directory inside home directory
+
+
+b) File Management:
+a. Inside the "LinuxAssignment" directory, create a new file named "file1.txt". Display its
+contents
+Solution : touch file1.txt --> to cfreate file1.txt file
+           cat file1.txt --> to dsiplay the content of file1.txt
+
+c) Directory Management:
+a. Create a new directory named "docs" inside the "LinuxAssignment" directory.
+Solution : mkdir docs --> to  create new directory docs inside LinuxAssignmnet directory 
+
+d) Copy and Move Files:
+a. Copy the "file1.txt" file into the "docs" directory and rename it to "file2.txt". 
+Solution : cp file1.txt docs --> to copy file1.txt in docs directory
+            cd docs --> tochange dirctory to docs
+            ls --> to see whether file1.txt is copied inside docs directory or not
+            mv file1.txt file2.txt --> to rename file1.txt to file2.txt
+
+e) Permissions and Ownership:
+a. Change the permissions of "file2.txt" to allow read, write, and execute permissions for
+the owner and only read permissions for others. Then, change the owner of "file2.txt" to
+the current user. 
+
+Solution : ls -n or ls -l --> checked the read,write and execute. it was already for read for other user so no need of change if need to change then, --> "chmod u+rwx g+r-wx o+r-wx file2.txt"
+
+f) Final Checklist:
+a. Finally, list the contents of the "LinuxAssignment" directory and the root directory to
+ensure that all operations were performed correctly. 
+Solution : chown cdac file2.txt --> to change ownership of "file2.txt" to user cdac
+            pwd --> to check the the directory path
+            cd .. --> to go in LinuxAssignment directory
+            ls --> to display content of LinuxAssignment directory
+
+g) File Searching:
+a. Search for all files with the extension ".txt" in the current directory and its subdirectories.
+b. Display lines containing a specific word in a file (provide a file name and the specific
+word to search).
+Solution : find -name "*txt" --> to display all the text files present in current directory and other subdirectories.
+           cat > file1.txt --> to edit the content of file after entering the content press ctrl+D to get to command line 
+           grep "hello" file1.txt --> after entring some content in file i put this coomand to search which has "hello" word in it and      display it.
+
+h) System Information:
+a. Display the current system date and time.
+Solution : date --> to display system current date
+            date "+%T" --> to display time
+
+i) Networking:
+a. Display the IP address of the system.
+b. Ping a remote server to check connectivity (provide a remote server address to ping). 
+Solution : hostname -I --> to display ip address
+           ping www.google.com --> it pinged google.com contunosly then i had to search the command to get out of it it was ctrl+C
+
+ File Compression:
+a. Compress the "docs" directory into a zip file.
+b. Extract the contents of the zip file into a new directory. 
+Solution : zip -r docs.zip docs --> to create zip file of docs directory
+           sudo apt install zip --> i had to install zip  command to use it asked for password and some extra storage on system and continue to install after installation i zipped docs file
+           unzip docs.zip -d new_docs --> to unzip/ extract the content of the docs.zip into new_docs directory
+
+k) File Editing:
+a. Open the "file1.txt" file in a text editor and add some text to it.
+b. Replace a specific word in the "file1.txt" file with another word (provide the original
+word and the word to replace it with). 
+Solution : sed -i 's/hello/world/g' file1.txt --> file1.txt already had hello world. I, replaced hello-->world so i became world world.
+           cat file1.txt --> to display the file1.txt file to see changes and "hello world" beacame "world world"
+
+Problem 2: Read the instructions carefully and answer accordingly. If there is
+any need to insert some data then do that as well.
+
+a. Suppose you have a file named "data.txt" containing important information. Display the
+first 10 lines of this file to quickly glance at its contents using a command. 
+Solution : mkdir Assignment2--> make directory
+           cd Assignment2 --> change directory
+           cat > data.txt --> create text file and enter data in it
+           head data.txt --> used for displaing first 10 line in the terminal
+
+b. Now, to check the end of the file for any recent additions, display the last 5 lines of
+"data.txt" using another command. 
+Solution : tail -n 5 data.txt --> used for displaying last 5 lines of the data enter in the file
+
+c. In a file named "numbers.txt," there are a series of numbers. Display the first 15 lines of
+this file to analyze the initial data set. 
+Solution : cat > numbers.txt --> create text file and enter data in it from 1 to 15
+           head -n 15 numbers.txt --> used for displaing first 15 line in the terminal
+
+d. To focus on the last few numbers of the dataset, display the last 3 lines of "numbers.txt".
+Solution : tail -n 3 data.txt --> used for displaying last 3 lines of the data enter in the file
+
+e. Imagine you have a file named "input.txt" with text content. Use a command to translate
+all lowercase letters to uppercase in "input.txt" and save the modified text in a new file
+named "output.txt." 
+Solution: cat > input.txt --> create text file and enter text (in lower case)
+          tr a-z A-Z < input.txt --> translate all the lower case words to uppercase
+          tr a-z A-Z < input.txt > output.txt --> changeing name from input to output
+
+f. In a file named "duplicate.txt," there are several lines of text, some of which are
+duplicates. Use a command to display only the unique lines from "duplicate.txt." 
+Solution :cat > duplicate.txt --> used for making text file name 'duplicate'
+          uniq duplicate.txt --> used for displaying content which are repeated
+
+g. In a file named "fruit.txt," there is a list of fruits, but some fruits are repeated. Use a
+command to display each unique fruit along with the count of its occurrences in
+"fruit.txt.
+Solution : cat > fruit.txt --> used for making text file of 'fruit' name
+           uniq -c fruit.txt --> for displaying repeated fruits with no. of times it has appeared 
+           uniq -c fruit.txt | cut -c7-  ---> for displaying repeated fruits with no. of times it has appeared with cutting the 7 spaces appeared in front of common elements
+
+ 
+
+ 
